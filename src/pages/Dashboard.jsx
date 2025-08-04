@@ -26,6 +26,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!user) return;
+
     const fetchNotes = async () => {
       const q = query(collection(db, "notes"), where("uid", "==", user.uid));
       const querySnapshot = await getDocs(q);
@@ -35,6 +36,7 @@ const Dashboard = () => {
       }));
       setNotes(fetchedNotes);
     };
+
     fetchNotes();
   }, [user]);
 
@@ -46,6 +48,7 @@ const Dashboard = () => {
       </div>
 
       <button className="create-button" onClick={handleCreateNote}>+ Create New Note</button>
+      <button className="analyze-pdf" onClick={() => navigate("/pdf-analyzer")}>Analyze PDF</button>
 
       <div className="cards-container">
         {notes.map(note => (

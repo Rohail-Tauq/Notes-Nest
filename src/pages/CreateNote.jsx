@@ -21,7 +21,7 @@ const CreateNote = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: import.meta.env.VITE_GEMINI_API
+          Authorization: import.meta.env.VITE_GROK_API
         },
         body: JSON.stringify({
           model: "llama3-8b-8192",

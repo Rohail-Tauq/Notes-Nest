@@ -4,6 +4,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import CreateNote from "./pages/CreateNote";
 import ViewNote from "./pages/ViewNote";
+import PdfAnalyzer from "./pages/PdfAnalyzer";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
@@ -37,7 +38,23 @@ function App() {
             </ProtectedRoute>
           }
         />
-      </Routes>
+        <Route
+          path="/pdf-analyzer"
+          element={
+            <ProtectedRoute>
+              <PdfAnalyzer />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pdf-analyzer/:fileName"
+          element={
+            <ProtectedRoute>
+              <PdfAnalyzer />
+            </ProtectedRoute>
+          }
+        />
+      </Routes> {/* ✅ You missed this */}
     </BrowserRouter>
   );
 }

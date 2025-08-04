@@ -1,0 +1,120 @@
+/* PdfAnalyzer.css */
+body{
+  background-color: rgba(8, 11, 39, 0.8);
+}
+.pdf-analyzer-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(20, 22, 40, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(92, 118, 255, 0.2);
+  color: #f1f1f1;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.pdf-analyzer-container h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #7ea1ff;
+}
+
+.disclaimer {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-left: 3px solid #7ea1ff;
+  border-radius: 6px;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #1f2235;
+  border: 1px solid #7ea1ff;
+  border-radius: 8px;
+  color: #ccc;
+  width: 100%;
+  cursor: pointer;
+}
+
+.chat-box {
+  background-color: #1c1e33;
+  padding: 20px;
+  border-radius: 12px;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border: 1px solid rgba(126, 161, 255, 0.2);
+}
+
+.message {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.message.user {
+  background: rgba(126, 161, 255, 0.1);
+  border-left: 4px solid #7ea1ff;
+}
+
+.message.assistant {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #42caff;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chat-input input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2a2d4e;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.chat-input button {
+  background: linear-gradient(135deg, #7ea1ff, #42caff);
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #7ea1ff88;
+}
+
+@media (max-width: 600px) {
+  .pdf-analyzer-container {
+    padding: 20px;
+  }
+
+  .chat-box {
+    height: 200px;
+  }
+
+  .chat-input {
+    flex-direction: column;
+  }
+
+  .chat-input button {
+    width: 100%;
+  }
+}
