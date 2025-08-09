@@ -61,14 +61,32 @@ const ViewNote = () => {
     }
   };
 
-  const handleDownloadPDF = () => {
-  const doc = new jsPDF();
-  doc.setFontSize(16);
-  doc.text(note.topic, 10, 10);
-  doc.setFontSize(12);
-  doc.text(note.content, 10, 20);
-  doc.save(`${note.topic}.pdf`);
+const handleDownloadPDF = () => {
+  const pdf = new jsPDF();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+  const pageWidth = pdf.internal.pageSize.getWidth() - 20;
+
+  let y = 20;
+
+  pdf.setFontSize(16);
+  pdf.text(note.topic, 10, y);
+  y += 10;
+
+  pdf.setFontSize(12);
+  const lines = pdf.splitTextToSize(note.content, pageWidth);
+
+  lines.forEach(line => {
+    if (y > pageHeight - 10) {
+      pdf.addPage();
+      y = 20;
+    }
+    pdf.text(line, 10, y);
+    y += 7;
+  });
+
+  pdf.save(`${note.topic}.pdf`);
 };
+
 
   return (
     <div className="view-note-container">
