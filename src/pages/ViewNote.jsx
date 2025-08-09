@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import "../styles/ViewNote.css";
+import { jsPDF } from "jspdf";
 
 const ViewNote = () => {
   const { id } = useParams();
@@ -60,6 +61,15 @@ const ViewNote = () => {
     }
   };
 
+  const handleDownloadPDF = () => {
+  const doc = new jsPDF();
+  doc.setFontSize(16);
+  doc.text(note.topic, 10, 10);
+  doc.setFontSize(12);
+  doc.text(note.content, 10, 20);
+  doc.save(`${note.topic}.pdf`);
+};
+
   return (
     <div className="view-note-container">
       {note ? (
@@ -97,6 +107,9 @@ const ViewNote = () => {
                 </button>
                 <button className="delete-btn" onClick={handleDelete}>
                   🗑️ Delete
+                </button>
+                <button className="download-btn" onClick={handleDownloadPDF}>
+                  Download
                 </button>
               </div>
             </>

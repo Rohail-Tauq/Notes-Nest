@@ -99,7 +99,14 @@ button {
   background-color: #e53935;
   transform: translateY(-1px);
 }
-
+.download-btn{
+  background-color: #2196f3;
+  color: white;
+}
+.download-btn:hover {
+  background-color: #1976d2;
+  transform: translateY(-1px);
+}
 .save-btn {
   background-color: #4caf50;
   color: white;
