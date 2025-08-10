@@ -37,6 +37,8 @@
   white-space: pre-wrap;
   line-height: 1.7;
   font-size: 18px;
+  word-wrap: break-word; /* Older support */
+  overflow-wrap: break-word; /* Modern support */
   color: #e0e0e0;
   background: rgba(255, 255, 255, 0.05);
   padding: 20px;

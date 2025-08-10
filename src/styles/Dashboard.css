@@ -98,6 +98,9 @@
   font-size: 0.95rem;
   color: #dddddd;
   line-height: 1.4;
+  white-space: pre-wrap;        /* Preserve user line breaks */
+  overflow-wrap: break-word;    /* Break long words */
+  word-wrap: break-word;
 }
 
 .view-more {
