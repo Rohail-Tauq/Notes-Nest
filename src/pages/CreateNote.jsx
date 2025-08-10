@@ -32,7 +32,7 @@ const CreateNote = () => {
             },
             {
               role: "user",
-              content: `Write short and clear notes on the topic: ${topic} without any emojis make a good pattern for the notes as it will be goin for the website that generate notes using grok api and dont say any introduction like Here are some short and clear notes on photosynthesis: just start from the topic `
+              content: `Write easy and clear notes on the topic: ${topic} without any emojis make a good pattern for the notes as it will be goin for the website that generate notes using grok api and dont say any introduction like Here are some short and clear notes on photosynthesis: just start from the topic `
             }
           ]
         })
