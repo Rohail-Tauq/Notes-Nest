@@ -39,7 +39,6 @@ const Dashboard = () => {
 
     fetchNotes();
   }, [user]);
-
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
@@ -49,7 +48,7 @@ const Dashboard = () => {
 
       <button className="create-button" onClick={handleCreateNote}>+ Create New Note</button>
       <button className="analyze-pdf" onClick={() => navigate("/pdf-analyzer")}>Analyze PDF</button>
-
+      <button className="manual-button" onClick={() => navigate("/manual-note")}>✏️ Create Manual Note</button>
       <div className="cards-container">
         {notes.map(note => (
           <div

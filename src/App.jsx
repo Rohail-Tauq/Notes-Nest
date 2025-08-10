@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import CreateNote from "./pages/CreateNote";
 import ViewNote from "./pages/ViewNote";
 import PdfAnalyzer from "./pages/PdfAnalyzer";
+import ManualNote from "./pages/ManualNote";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
@@ -54,7 +55,15 @@ function App() {
             </ProtectedRoute>
           }
         />
-      </Routes> {/* ✅ You missed this */}
+        <Route
+          path="/manual-note"
+          element={
+            <ProtectedRoute>
+              <ManualNote />
+            </ProtectedRoute>
+          }
+        />
+        </Routes>
     </BrowserRouter>
   );
 }
