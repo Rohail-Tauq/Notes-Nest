@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../config/firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
-import "../styles/CreateNote.css"; // you can reuse or make your own styles
+import "../styles/ManualNote.css"; // you can reuse or make your own styles
 
 const ManualNote = () => {
   const [user] = useAuthState(auth);
