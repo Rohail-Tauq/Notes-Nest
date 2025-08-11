@@ -11,6 +11,28 @@
   justify-content: space-between;
   align-items: center;
 }
+.search-bar {
+  width: 250px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-bar:focus {
+  border-color: #ffa600;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(255, 166, 0, 0.4);
+}
 
 .logout-button {
   background-color: #ff4d4d;
@@ -21,6 +43,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-left: 10px;
 }
 
 .logout-button:hover {
